@@ -32,6 +32,11 @@ struct MangaDTO: Codable, Identifiable, Hashable {
     let mainPicture: String
     let startDate: Date?
     let url: String
+    
+    var mainPictureURL: URL? {
+        let urlString = mainPicture.replacingOccurrences(of: "\"", with: "")
+        return URL(string: urlString)
+    }
 }
 
 struct Genres: Codable, Hashable{

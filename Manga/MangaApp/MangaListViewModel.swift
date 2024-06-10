@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Combine
+//import Combine
 
 
 
@@ -18,15 +18,19 @@ final class MangaListViewModel: ObservableObject {
         case filter
     }
     
-    private var disposeBag = Set<AnyCancellable>()
+    //private var disposeBag = Set<AnyCancellable>()
+    private var searchWork: DispatchWorkItem?
 
     let mangaListInteractor: MangaListInteractorProtocol
     var mangaGetType: MangasGetType = .general 
+    var errorMessage = ""
     
+    @Published var showerror = false
     @Published var mangaList: [MangaDTO] = []
     @Published var searchText: String = "" {
         didSet {
             page = 1
+            searchWithDelay()
         }
     }
     var page = 1
@@ -36,7 +40,8 @@ final class MangaListViewModel: ObservableObject {
     init(mangaListInteractor: MangaListInteractorProtocol = MangaListInteractor.shared ) {
         self.mangaListInteractor = mangaListInteractor
         //getMangaList()
-        debounceSearchText()
+        //debounceSearchText()
+        
     }
     
     func getMangas() {
@@ -72,7 +77,9 @@ final class MangaListViewModel: ObservableObject {
                     mangaList += result
                 }
             } catch {
-                print(error)
+                await MainActor.run {
+                    setAlert()
+                }
             }
         }
     }
@@ -84,29 +91,46 @@ final class MangaListViewModel: ObservableObject {
         }
 
     }
-    
     func getMangaSearch() {
         Task {
             do {
                 let mangaResult = try await mangaListInteractor.fetchMangasContains(name: searchText, page: page).items
-                await MainActor.run {
-                    self.mangaList += mangaResult
-                }
+                self.mangaList += mangaResult
+
             } catch let error as NetworkError {
-                print(error.errorDescription)
-            } catch {
-                print(error)
+                //print(error.errorDescription)
+                await MainActor.run {
+                    setAlert()
+                }            } catch {
+                //print(error)
+                await MainActor.run {
+                    setAlert()
+                }
             }
         }
     }
     
-    private func debounceSearchText() {
+    private func setAlert(message: String? = nil) {
+        errorMessage = message ?? "Can not change the view"
+        showerror = true
+    }
+   
+    /*private func debounceSearchText() {
         $searchText
             .debounce(for: 1, scheduler: RunLoop.main)
             .sink { value in
                 self.getMangas()
             }
             .store(in: &disposeBag)
+    }*/
+    
+    private func searchWithDelay() {
+        searchWork?.cancel()
+        let newSearchWork = DispatchWorkItem {
+            self.getMangas()
+        }
+        searchWork = newSearchWork
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: newSearchWork)
     }
   
     

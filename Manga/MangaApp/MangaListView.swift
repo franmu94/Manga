@@ -15,8 +15,8 @@ struct MangaListView: View {
             List {
                 ForEach(vm.mangaList) { manga in
                     NavigationLink(value: manga) {
-                        Text(manga.title)
-                            .onAppear{
+                        MangaListCell(manga: manga)
+                            .onAppear {
                                 vm.isLastItem(manga: manga)
                             }
                     }
@@ -28,7 +28,17 @@ struct MangaListView: View {
                 //
                 Text(manga.title)
             }
-            
+            .alert("Something went wrong", isPresented: $vm.showerror) {
+                Text("OK")
+                Button(action: {
+                    vm.getMangas()
+                }, label: {
+                    Text("Retry")
+                })
+            } message: {
+                Text(vm.errorMessage)
+            }
+
         }
         
         

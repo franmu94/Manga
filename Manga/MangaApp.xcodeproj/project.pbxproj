@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D35335222C0F64D60097861E /* JSONdecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35335212C0F64D60097861E /* JSONdecoder.swift */; };
 		D35335242C0F64F30097861E /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35335232C0F64F30097861E /* URLSession.swift */; };
+		D35335282C10B9EE0097861E /* MAngaListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35335272C10B9EE0097861E /* MAngaListCell.swift */; };
+		D353352A2C10BAE20097861E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35335292C10BAE20097861E /* PreviewData.swift */; };
+		D35335302C10BDA80097861E /* CacheImages in Frameworks */ = {isa = PBXBuildFile; productRef = D353352F2C10BDA80097861E /* CacheImages */; };
 		D3745BD72C04DC78000F62AF /* SecKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3745BD62C04DC78000F62AF /* SecKeyStore.swift */; };
 		D3AF48702C08944700AA191F /* MangaListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF486F2C08944700AA191F /* MangaListInteractor.swift */; };
 		D3AF48742C08949C00AA191F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF48732C08949C00AA191F /* Enums.swift */; };
@@ -17,7 +20,6 @@
 		D3AF487A2C08CD8900AA191F /* MangaListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF48792C08CD8900AA191F /* MangaListView.swift */; };
 		D3AF487C2C08CDE900AA191F /* MangaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF487B2C08CDE900AA191F /* MangaListViewModel.swift */; };
 		D3AF487E2C08DCAA00AA191F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF487D2C08DCAA00AA191F /* DateFormatter.swift */; };
-		D3AF48822C08DEBE00AA191F /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF48812C08DEBE00AA191F /* PreviewData.swift */; };
 		D3AF48842C08E1F800AA191F /* PreviewDataMangas.json in Resources */ = {isa = PBXBuildFile; fileRef = D3AF48832C08E1F800AA191F /* PreviewDataMangas.json */; };
 		D3D823462BFBA00600BFF546 /* MangaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823452BFBA00600BFF546 /* MangaAppApp.swift */; };
 		D3D823482BFBA00600BFF546 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823472BFBA00600BFF546 /* ContentView.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		D35335212C0F64D60097861E /* JSONdecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONdecoder.swift; sourceTree = "<group>"; };
 		D35335232C0F64F30097861E /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		D35335272C10B9EE0097861E /* MAngaListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAngaListCell.swift; sourceTree = "<group>"; };
+		D35335292C10BAE20097861E /* PreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewData.swift; path = ../../../../../../../../../Downloads/PreviewData.swift; sourceTree = "<group>"; };
 		D3745BD62C04DC78000F62AF /* SecKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecKeyStore.swift; path = "../../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/SecKeyStore.swift"; sourceTree = "<group>"; };
 		D3AF486F2C08944700AA191F /* MangaListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaListInteractor.swift; sourceTree = "<group>"; };
 		D3AF48732C08949C00AA191F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
@@ -48,7 +52,6 @@
 		D3AF48792C08CD8900AA191F /* MangaListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaListView.swift; sourceTree = "<group>"; };
 		D3AF487B2C08CDE900AA191F /* MangaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaListViewModel.swift; sourceTree = "<group>"; };
 		D3AF487D2C08DCAA00AA191F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
-		D3AF48812C08DEBE00AA191F /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
 		D3AF48832C08E1F800AA191F /* PreviewDataMangas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PreviewDataMangas.json; path = ../../../../../../../../../Downloads/PreviewDataMangas.json; sourceTree = "<group>"; };
 		D3D823422BFBA00600BFF546 /* MangaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D823452BFBA00600BFF546 /* MangaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaAppApp.swift; sourceTree = "<group>"; };
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D35335302C10BDA80097861E /* CacheImages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D3AF48832C08E1F800AA191F /* PreviewDataMangas.json */,
-				D3AF48812C08DEBE00AA191F /* PreviewData.swift */,
+				D35335292C10BAE20097861E /* PreviewData.swift */,
 			);
 			name = PreviewData;
 			sourceTree = "<group>";
@@ -230,6 +234,7 @@
 			children = (
 				D3AF48792C08CD8900AA191F /* MangaListView.swift */,
 				D3AF487B2C08CDE900AA191F /* MangaListViewModel.swift */,
+				D35335272C10B9EE0097861E /* MAngaListCell.swift */,
 			);
 			name = MangaList;
 			sourceTree = "<group>";
@@ -307,6 +312,9 @@
 			dependencies = (
 			);
 			name = MangaApp;
+			packageProductDependencies = (
+				D353352F2C10BDA80097861E /* CacheImages */,
+			);
 			productName = MangaApp;
 			productReference = D3D823422BFBA00600BFF546 /* MangaApp.app */;
 			productType = "com.apple.product-type.application";
@@ -335,6 +343,9 @@
 				Base,
 			);
 			mainGroup = D3D823392BFBA00600BFF546;
+			packageReferences = (
+				D353352E2C10BDA80097861E /* XCLocalSwiftPackageReference "../../../../../../CacheImages" */,
+			);
 			productRefGroup = D3D823432BFBA00600BFF546 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -367,6 +378,7 @@
 				D3D823892BFFA22700BFF546 /* String.swift in Sources */,
 				D35335242C0F64F30097861E /* URLSession.swift in Sources */,
 				D3D8237E2BFE43C400BFF546 /* LoginInteractorProtocol.swift in Sources */,
+				D353352A2C10BAE20097861E /* PreviewData.swift in Sources */,
 				D3AF487E2C08DCAA00AA191F /* DateFormatter.swift in Sources */,
 				D3AF487A2C08CD8900AA191F /* MangaListView.swift in Sources */,
 				D3D823842BFE4A4C00BFF546 /* AppConfig.swift in Sources */,
@@ -374,12 +386,12 @@
 				D3745BD72C04DC78000F62AF /* SecKeyStore.swift in Sources */,
 				D3AF48702C08944700AA191F /* MangaListInteractor.swift in Sources */,
 				D3D823642BFCF54500BFF546 /* CustomTextfield.swift in Sources */,
+				D35335282C10B9EE0097861E /* MAngaListCell.swift in Sources */,
 				D3AF48762C0897ED00AA191F /* MangaModel.swift in Sources */,
 				D3D823612BFCF22600BFF546 /* LoginView.swift in Sources */,
 				D3AF487C2C08CDE900AA191F /* MangaListViewModel.swift in Sources */,
 				D3D823482BFBA00600BFF546 /* ContentView.swift in Sources */,
 				D35335222C0F64D60097861E /* JSONdecoder.swift in Sources */,
-				D3AF48822C08DEBE00AA191F /* PreviewData.swift in Sources */,
 				D3AF48782C089BC400AA191F /* MainTabView.swift in Sources */,
 				D3D823682BFCFD5400BFF546 /* LoginViewModel.swift in Sources */,
 				D3D823462BFBA00600BFF546 /* MangaAppApp.swift in Sources */,
@@ -592,6 +604,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D353352E2C10BDA80097861E /* XCLocalSwiftPackageReference "../../../../../../CacheImages" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../../../../../CacheImages;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D353352F2C10BDA80097861E /* CacheImages */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CacheImages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D3D8233A2BFBA00600BFF546 /* Project object */;
 }
