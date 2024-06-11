@@ -8,7 +8,13 @@
 import Foundation
 //import Combine
 
-
+enum FilterType: String, CaseIterable, Identifiable {
+    var id: Self { self }
+    case All
+    case Themes
+    case Genre
+    case Demography
+}
 
 final class MangaListViewModel: ObservableObject {
     
@@ -16,6 +22,19 @@ final class MangaListViewModel: ObservableObject {
         case search
         case general
         case filter
+    }
+    
+    var getFilteredOptions: [String] {
+        switch filterOption {
+        case .All:
+            []
+        case .Themes:
+            Theme.allCases.map { $0.rawValue }
+        case .Genre:
+            Genre.allCases.map { $0.rawValue }
+        case .Demography:
+            Demography.allCases.map { $0.rawValue }
+        }
     }
     
     //private var disposeBag = Set<AnyCancellable>()
@@ -33,6 +52,10 @@ final class MangaListViewModel: ObservableObject {
             searchWithDelay()
         }
     }
+    
+    @Published var filterOption: FilterType = .All
+    @Published var selectedTheme: Theme = .gore
+    @Published var selectedFilteredOption: String = ""
     var page = 1
     var per = 20
     
@@ -41,7 +64,7 @@ final class MangaListViewModel: ObservableObject {
         self.mangaListInteractor = mangaListInteractor
         //getMangaList()
         //debounceSearchText()
-        
+        getMangas()
     }
     
     func getMangas() {
@@ -59,6 +82,9 @@ final class MangaListViewModel: ObservableObject {
         case .filter:
             break
         }
+    }
+    
+    func getFilteredManga() {
     }
     
     func setMangaType() {
@@ -101,7 +127,8 @@ final class MangaListViewModel: ObservableObject {
                 //print(error.errorDescription)
                 await MainActor.run {
                     setAlert()
-                }            } catch {
+                }
+            } catch {
                 //print(error)
                 await MainActor.run {
                     setAlert()

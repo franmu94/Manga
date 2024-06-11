@@ -7,12 +7,33 @@
 
 import SwiftUI
 
-struct FilterListView: View {
+struct FilterListView<T:CaseIterable & Hashable & Identifiable>: View {
+    
+    @Binding var selectedFilter: T
+    @Binding var showFilter: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack (alignment:.leading) {
+            List {
+                ForEach(Array(T.allCases)) { filter in
+                    Text("\(filter)".capitalized)
+                        .font(.title)
+                        .bold()
+                        .onTapGesture {
+                            selectedFilter = filter
+                            showFilter.toggle()
+                        }
+                }
+                .listRowBackground(Color.clear)
+                .listRowSeparator(.hidden)
+            }
+            .listStyle(.plain)
+        }
+        .background(.thinMaterial)
+        
     }
 }
 
 #Preview {
-    FilterListView()
+    FilterListView(selectedFilter: .constant(Theme.combatSports), showFilter: .constant(Bool()))
 }

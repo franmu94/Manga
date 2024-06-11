@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum Theme: String, CaseIterable, Codable {
+enum Theme: String, CaseIterable, Codable, Identifiable {
+    var id: Self { self }
     case gore = "Gore"
     case military = "Military"
     case mythology = "Mythology"
@@ -62,7 +63,8 @@ enum Theme: String, CaseIterable, Codable {
     case idolsMale = "Idols (Male)"
 }
 
-enum Genre: String, CaseIterable, Codable {
+enum Genre: String, CaseIterable, Codable, Identifiable {
+    var id: Self { self }
     case action = "Action"
     case adventure = "Adventure"
     case awardWinning = "Award Winning"
@@ -101,4 +103,15 @@ enum MangaStatus: String, Codable {
     var capitalizedValue: String {
         rawValue.capitalized.replacingOccurrences(of: "_", with: " ")
     }
+}
+
+enum Demography: String, CaseIterable, Codable, Identifiable {
+    var id: Self { self }
+    
+    case Seinen
+    case Shounen
+    case Shoujo
+    case Josei
+    case Kids
+    
 }

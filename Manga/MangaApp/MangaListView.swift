@@ -10,9 +10,14 @@ import SwiftUI
 struct MangaListView: View {
     @ObservedObject var vm = MangaListViewModel()
     
+    @State var showFilterView: Bool = false
+    
     var body: some View {
         NavigationStack {
             List {
+                if vm.mangaList.isEmpty {
+                    ContentUnavailableView("Manga Not Found", systemImage: "book.fill", description: Text("Any manga contains \(vm.searchText)"))
+                }
                 ForEach(vm.mangaList) { manga in
                     NavigationLink(value: manga) {
                         MangaListCell(manga: manga)
@@ -22,10 +27,28 @@ struct MangaListView: View {
                     }
                 }
             }
+            // MARK: refactor
+            .toolbar {
+                Menu {
+                    ForEach(FilterType.allCases) { filter in
+                        Button {
+                            vm.filterOption = filter
+                            if filter != .All {
+                                showFilterView.toggle()
+                            }
+                        } label: {
+                            Text(filter.rawValue.capitalized)
+                        }
+
+                    }
+                    
+                } label: {
+                    Image(systemName: "line.3.horizontal.decrease.circle")
+                }
+            }
             .searchable(text: $vm.searchText)
             .navigationTitle("Mangas")
             .navigationDestination(for: MangaDTO.self) { manga in
-                //
                 Text(manga.title)
             }
             .alert("Something went wrong", isPresented: $vm.showerror) {
@@ -38,10 +61,14 @@ struct MangaListView: View {
             } message: {
                 Text(vm.errorMessage)
             }
-
         }
-        
-        
+        .overlay {
+            if showFilterView {
+                FilterListViewArray(filterOptions: vm.getFilteredOptions, showFilter: $showFilterView)
+            }
+            
+        }
+        .animation(.bouncy(duration: TimeInterval(0.5)), value: showFilterView)
     }
 }
 
