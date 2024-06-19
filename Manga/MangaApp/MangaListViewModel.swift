@@ -55,6 +55,9 @@ final class MangaListViewModel: ObservableObject {
     
     @Published var filterOption: FilterType = .All
     @Published var selectedTheme: Theme = .gore
+    @Published var selectedGenre: Genre = .action
+    @Published var selectedDemography: Demography = .Josei
+
     @Published var selectedFilteredOption: String = ""
     var page = 1
     var per = 20
@@ -80,11 +83,27 @@ final class MangaListViewModel: ObservableObject {
             getMangaList()
             
         case .filter:
-            break
+            getFilteredMangas()
         }
     }
     
-    func getFilteredManga() {
+    func getFilteredMangas() {
+        Task {
+            switch filterOption {
+            case .All:
+                getMangaList()
+            case .Themes:
+                break
+            case .Genre:
+                page = 1
+                let filterResult = try await mangaListInteractor.fetchMangasByGenre(genre: selectedGenre.rawValue, page: page).items
+                await MainActor.run {
+                                    self.mangaList = filterResult
+                                }
+            case .Demography:
+                break
+            }
+        }
     }
     
     func setMangaType() {

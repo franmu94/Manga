@@ -15,6 +15,7 @@ extension URL {
 
     private static let listMangasURL = mainURL.appending(path: "list")
     private static let searchMangaContainsURL = mainURL.appending(path: "search/mangasContains")
+    
 
     static func allMagasList(page: Int, per: Int) -> URL {
         listMangasURL.appending(path: "mangas").appending(queryItems: [.page(page: page), .per(per: per)])
@@ -23,7 +24,12 @@ extension URL {
     static func searchMangaContainsURL(mangaName: String, page: Int) -> URL {
         searchMangaContainsURL.appending(path: mangaName).appending(queryItems: [.page(page: page)])
     }
-
+    
+    static func filterMangasByGenreURL(genre: String, page: Int) -> URL {
+        listMangasURL.appending(path: "mangaByGenre")
+            .appending(path: genre)
+            .appending(queryItems: [.page(page: page)])
+    }
 }
 
 

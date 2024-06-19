@@ -64,7 +64,7 @@ struct MangaListView: View {
         }
         .overlay {
             if showFilterView {
-                FilterListViewArray(filterOptions: vm.getFilteredOptions, showFilter: $showFilterView)
+                FilterListViewArray(filterOptions: vm.getFilteredOptions, showFilter: $showFilterView, selectedOption: $vm.selectedFilteredOption)
             }
             
         }

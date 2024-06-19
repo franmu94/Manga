@@ -11,6 +11,8 @@ protocol MangaListInteractorProtocol {
     func fetchMangasList(page: Int, per: Int) async throws -> MangaResultDTO
     
     func fetchMangasContains(name: String, page: Int) async throws -> MangaResultDTO
+    
+    func fetchMangasByGenre(genre: String, page: Int) async throws -> MangaResultDTO
 }
 
 struct MangaListInteractor: MangaListInteractorProtocol {
@@ -23,6 +25,10 @@ struct MangaListInteractor: MangaListInteractorProtocol {
     
     func fetchMangasContains(name: String, page: Int) async throws -> MangaResultDTO {
         try await getJSONFromURL(url: .searchMangaContainsURL(mangaName: name, page: page), type: MangaResultDTO.self)
+    }
+    
+    func fetchMangasByGenre(genre: String, page: Int) async throws -> MangaResultDTO {
+        try await getJSONFromURL(url: .filterMangasByGenreURL(genre: genre, page: page), type: MangaResultDTO.self)
     }
 }
 
