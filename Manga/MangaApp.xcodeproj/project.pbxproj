@@ -39,6 +39,7 @@
 		D3D823842BFE4A4C00BFF546 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823832BFE4A4C00BFF546 /* AppConfig.swift */; };
 		D3D823862BFE513E00BFF546 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823852BFE513E00BFF546 /* NetworkError.swift */; };
 		D3D823892BFFA22700BFF546 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823882BFFA22700BFF546 /* String.swift */; };
+		D3E0002F2C33356400DF5403 /* MangaCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0002E2C33356400DF5403 /* MangaCollectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		D3D823832BFE4A4C00BFF546 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		D3D823852BFE513E00BFF546 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D3D823882BFFA22700BFF546 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		D3E0002E2C33356400DF5403 /* MangaCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaCollectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				D3D8236B2BFD058400BFF546 /* UserModel.swift */,
 				D3AF48752C0897ED00AA191F /* MangaModel.swift */,
 				D3AF48732C08949C00AA191F /* Enums.swift */,
+				D3E0002E2C33356400DF5403 /* MangaCollectionModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				D3D8237E2BFE43C400BFF546 /* LoginInteractorProtocol.swift in Sources */,
 				D353352A2C10BAE20097861E /* PreviewData.swift in Sources */,
 				D3AF487E2C08DCAA00AA191F /* DateFormatter.swift in Sources */,
+				D3E0002F2C33356400DF5403 /* MangaCollectionModel.swift in Sources */,
 				D3AF487A2C08CD8900AA191F /* MangaListView.swift in Sources */,
 				D3D823842BFE4A4C00BFF546 /* AppConfig.swift in Sources */,
 				D3D8236C2BFD058400BFF546 /* UserModel.swift in Sources */,
