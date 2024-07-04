@@ -18,7 +18,7 @@ protocol LoginInteractorProtocol {
 struct LoginInteractor: LoginInteractorProtocol {
     static let shared = LoginInteractor()
     let appConfing = AppConfig.shared
-    let keyChain = SecKeyStore.shared
+    let keyChain = KeychainManager.shared
 
     func registerUser(model: UserModel) async throws {
         
@@ -40,6 +40,16 @@ struct LoginInteractor: LoginInteractorProtocol {
             throw NetworkError.nonHTTP
         }
         
+        
+        
+        switch responseHTTP {
+        case 200:
+            throw NetworkError.status(responseHTTP.statusCode)
+        default:
+            print("error")
+        }
+        
+        
         guard responseHTTP.statusCode == 200 else {
             throw NetworkError.status(responseHTTP.statusCode)
         }
@@ -47,3 +57,11 @@ struct LoginInteractor: LoginInteractorProtocol {
         keyChain.storeKey(key: data, label: "token")
     }
 }
+
+
+func ~= (pattern: Int, value: HTTPURLResponse) -> Bool {
+    return value.statusCode == pattern
+}
+
+
+

@@ -34,6 +34,12 @@ extension URL {
             .appending(path: genre)
             .appending(queryItems: [.page(page: page)])
     }
+    
+    static func filterMangasByType(filterType: String, filterOption: String, page: Int) -> URL {
+        listMangasURL.appending(path: "mangaBy\(filterType)")
+            .appending(path: filterOption)
+            .appending(queryItems: [.page(page: page)])
+    }
 }
 
 

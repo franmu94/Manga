@@ -11,10 +11,9 @@
 		D35335242C0F64F30097861E /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35335232C0F64F30097861E /* URLSession.swift */; };
 		D35335282C10B9EE0097861E /* MAngaListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35335272C10B9EE0097861E /* MAngaListCell.swift */; };
 		D353352A2C10BAE20097861E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35335292C10BAE20097861E /* PreviewData.swift */; };
-		D35335302C10BDA80097861E /* CacheImages in Frameworks */ = {isa = PBXBuildFile; productRef = D353352F2C10BDA80097861E /* CacheImages */; };
 		D353353E2C17175A0097861E /* FilterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D353353D2C17175A0097861E /* FilterListView.swift */; };
 		D35335402C174EDF0097861E /* FilterListViewArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D353353F2C174EDF0097861E /* FilterListViewArray.swift */; };
-		D3745BD72C04DC78000F62AF /* SecKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3745BD62C04DC78000F62AF /* SecKeyStore.swift */; };
+		D3745BD72C04DC78000F62AF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3745BD62C04DC78000F62AF /* KeychainManager.swift */; };
 		D3AF48702C08944700AA191F /* MangaListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF486F2C08944700AA191F /* MangaListInteractor.swift */; };
 		D3AF48742C08949C00AA191F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF48732C08949C00AA191F /* Enums.swift */; };
 		D3AF48762C0897ED00AA191F /* MangaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF48752C0897ED00AA191F /* MangaModel.swift */; };
@@ -24,7 +23,6 @@
 		D3AF487E2C08DCAA00AA191F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF487D2C08DCAA00AA191F /* DateFormatter.swift */; };
 		D3AF48842C08E1F800AA191F /* PreviewDataMangas.json in Resources */ = {isa = PBXBuildFile; fileRef = D3AF48832C08E1F800AA191F /* PreviewDataMangas.json */; };
 		D3D823462BFBA00600BFF546 /* MangaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823452BFBA00600BFF546 /* MangaAppApp.swift */; };
-		D3D823482BFBA00600BFF546 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823472BFBA00600BFF546 /* ContentView.swift */; };
 		D3D8234A2BFBA00800BFF546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D823492BFBA00800BFF546 /* Assets.xcassets */; };
 		D3D8234D2BFBA00800BFF546 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D8234C2BFBA00800BFF546 /* Preview Assets.xcassets */; };
 		D3D823612BFCF22600BFF546 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823602BFCF22600BFF546 /* LoginView.swift */; };
@@ -40,6 +38,9 @@
 		D3D823862BFE513E00BFF546 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823852BFE513E00BFF546 /* NetworkError.swift */; };
 		D3D823892BFFA22700BFF546 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D823882BFFA22700BFF546 /* String.swift */; };
 		D3E0002F2C33356400DF5403 /* MangaCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0002E2C33356400DF5403 /* MangaCollectionModel.swift */; };
+		D3E000322C33FC5C00DF5403 /* CacheImages in Frameworks */ = {isa = PBXBuildFile; productRef = D3E000312C33FC5C00DF5403 /* CacheImages */; };
+		D3E000342C3417DC00DF5403 /* MangaUserCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E000332C3417DC00DF5403 /* MangaUserCollectionInteractor.swift */; };
+		D3E000382C36B76F00DF5403 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E000372C36B76F00DF5403 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +50,7 @@
 		D35335292C10BAE20097861E /* PreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewData.swift; path = ../../../../../../../../../Downloads/PreviewData.swift; sourceTree = "<group>"; };
 		D353353D2C17175A0097861E /* FilterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListView.swift; sourceTree = "<group>"; };
 		D353353F2C174EDF0097861E /* FilterListViewArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewArray.swift; sourceTree = "<group>"; };
-		D3745BD62C04DC78000F62AF /* SecKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecKeyStore.swift; path = "../../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/SecKeyStore.swift"; sourceTree = "<group>"; };
+		D3745BD62C04DC78000F62AF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeychainManager.swift; path = "../../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/KeychainManager.swift"; sourceTree = "<group>"; };
 		D3AF486F2C08944700AA191F /* MangaListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaListInteractor.swift; sourceTree = "<group>"; };
 		D3AF48732C08949C00AA191F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D3AF48752C0897ED00AA191F /* MangaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaModel.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		D3AF48832C08E1F800AA191F /* PreviewDataMangas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = PreviewDataMangas.json; path = ../../../../../../../../../Downloads/PreviewDataMangas.json; sourceTree = "<group>"; };
 		D3D823422BFBA00600BFF546 /* MangaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MangaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D823452BFBA00600BFF546 /* MangaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaAppApp.swift; sourceTree = "<group>"; };
-		D3D823472BFBA00600BFF546 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D3D823492BFBA00800BFF546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3D8234C2BFBA00800BFF546 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D3D823602BFCF22600BFF546 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -76,6 +76,9 @@
 		D3D823852BFE513E00BFF546 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D3D823882BFFA22700BFF546 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D3E0002E2C33356400DF5403 /* MangaCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaCollectionModel.swift; sourceTree = "<group>"; };
+		D3E000332C3417DC00DF5403 /* MangaUserCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaUserCollectionInteractor.swift; sourceTree = "<group>"; };
+		D3E000352C3535AA00DF5403 /* PreviewCollectionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreviewCollectionData.json; sourceTree = "<group>"; };
+		D3E000372C36B76F00DF5403 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D35335302C10BDA80097861E /* CacheImages in Frameworks */,
+				D3E000322C33FC5C00DF5403 /* CacheImages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +115,7 @@
 		D3745BD52C04DB9D000F62AF /* Security */ = {
 			isa = PBXGroup;
 			children = (
-				D3745BD62C04DC78000F62AF /* SecKeyStore.swift */,
+				D3745BD62C04DC78000F62AF /* KeychainManager.swift */,
 			);
 			name = Security;
 			sourceTree = "<group>";
@@ -122,6 +125,7 @@
 			children = (
 				D3AF48832C08E1F800AA191F /* PreviewDataMangas.json */,
 				D35335292C10BAE20097861E /* PreviewData.swift */,
+				D3E000352C3535AA00DF5403 /* PreviewCollectionData.json */,
 			);
 			name = PreviewData;
 			sourceTree = "<group>";
@@ -146,11 +150,10 @@
 			isa = PBXGroup;
 			children = (
 				D3D823582BFCF14E00BFF546 /* Core */,
-				D3D823572BFCF11900BFF546 /* ViewModel */,
 				D3745BD52C04DB9D000F62AF /* Security */,
 				D3D823552BFCF0FB00BFF546 /* Interactor */,
-				D3D823872BFFA20800BFF546 /* Extensions */,
 				D3D823542BFCF0F100BFF546 /* Interface */,
+				D3D823872BFFA20800BFF546 /* Extensions */,
 				D3D823532BFCF0EC00BFF546 /* Model */,
 				D3D823562BFCF10F00BFF546 /* System */,
 				D3D823492BFBA00800BFF546 /* Assets.xcassets */,
@@ -196,6 +199,7 @@
 			children = (
 				D3D8237D2BFE43C400BFF546 /* LoginInteractorProtocol.swift */,
 				D3AF486F2C08944700AA191F /* MangaListInteractor.swift */,
+				D3E000332C3417DC00DF5403 /* MangaUserCollectionInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -210,22 +214,14 @@
 			name = System;
 			sourceTree = "<group>";
 		};
-		D3D823572BFCF11900BFF546 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
 		D3D823582BFCF14E00BFF546 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				D3D8235F2BFCF1DC00BFF546 /* MainTabView */,
-				D3D823472BFBA00600BFF546 /* ContentView.swift */,
-				D3D8235E2BFCF19600BFF546 /* Settings */,
-				D3D8235D2BFCF18700BFF546 /* TopMangas */,
+				D3E000362C36B75700DF5403 /* Settings */,
 				D3D8235C2BFCF17F00BFF546 /* MangaList */,
-				D3D8235B2BFCF16300BFF546 /* Favorites */,
+				D3D8235D2BFCF18700BFF546 /* TopMangas */,
+				D3D8235B2BFCF16300BFF546 /* UserCollection */,
 				D3D8235A2BFCF15B00BFF546 /* Pager */,
 				D3D823592BFCF15500BFF546 /* Login */,
 			);
@@ -248,11 +244,11 @@
 			name = Pager;
 			sourceTree = "<group>";
 		};
-		D3D8235B2BFCF16300BFF546 /* Favorites */ = {
+		D3D8235B2BFCF16300BFF546 /* UserCollection */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Favorites;
+			name = UserCollection;
 			sourceTree = "<group>";
 		};
 		D3D8235C2BFCF17F00BFF546 /* MangaList */ = {
@@ -269,13 +265,6 @@
 			children = (
 			);
 			name = TopMangas;
-			sourceTree = "<group>";
-		};
-		D3D8235E2BFCF19600BFF546 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Settings;
 			sourceTree = "<group>";
 		};
 		D3D8235F2BFCF1DC00BFF546 /* MainTabView */ = {
@@ -321,6 +310,14 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		D3E000362C36B75700DF5403 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D3E000372C36B76F00DF5403 /* SettingsView.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,7 +335,7 @@
 			);
 			name = MangaApp;
 			packageProductDependencies = (
-				D353352F2C10BDA80097861E /* CacheImages */,
+				D3E000312C33FC5C00DF5403 /* CacheImages */,
 			);
 			productName = MangaApp;
 			productReference = D3D823422BFBA00600BFF546 /* MangaApp.app */;
@@ -369,7 +366,7 @@
 			);
 			mainGroup = D3D823392BFBA00600BFF546;
 			packageReferences = (
-				D353352E2C10BDA80097861E /* XCLocalSwiftPackageReference "../../../../../../CacheImages" */,
+				D3E000302C33FC5C00DF5403 /* XCLocalSwiftPackageReference "../../../../../../CacheImages" */,
 			);
 			productRefGroup = D3D823432BFBA00600BFF546 /* Products */;
 			projectDirPath = "";
@@ -409,15 +406,15 @@
 				D3AF487A2C08CD8900AA191F /* MangaListView.swift in Sources */,
 				D3D823842BFE4A4C00BFF546 /* AppConfig.swift in Sources */,
 				D3D8236C2BFD058400BFF546 /* UserModel.swift in Sources */,
-				D3745BD72C04DC78000F62AF /* SecKeyStore.swift in Sources */,
+				D3745BD72C04DC78000F62AF /* KeychainManager.swift in Sources */,
 				D3AF48702C08944700AA191F /* MangaListInteractor.swift in Sources */,
 				D3D823642BFCF54500BFF546 /* CustomTextfield.swift in Sources */,
 				D35335282C10B9EE0097861E /* MAngaListCell.swift in Sources */,
 				D3AF48762C0897ED00AA191F /* MangaModel.swift in Sources */,
+				D3E000382C36B76F00DF5403 /* SettingsView.swift in Sources */,
 				D35335402C174EDF0097861E /* FilterListViewArray.swift in Sources */,
 				D3D823612BFCF22600BFF546 /* LoginView.swift in Sources */,
 				D3AF487C2C08CDE900AA191F /* MangaListViewModel.swift in Sources */,
-				D3D823482BFBA00600BFF546 /* ContentView.swift in Sources */,
 				D35335222C0F64D60097861E /* JSONdecoder.swift in Sources */,
 				D3AF48782C089BC400AA191F /* MainTabView.swift in Sources */,
 				D3D823682BFCFD5400BFF546 /* LoginViewModel.swift in Sources */,
@@ -426,6 +423,7 @@
 				D3D823862BFE513E00BFF546 /* NetworkError.swift in Sources */,
 				D3D8236E2BFD05F000BFF546 /* URL.swift in Sources */,
 				D3AF48742C08949C00AA191F /* Enums.swift in Sources */,
+				D3E000342C3417DC00DF5403 /* MangaUserCollectionInteractor.swift in Sources */,
 				D3D823802BFE464400BFF546 /* URLRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,14 +632,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		D353352E2C10BDA80097861E /* XCLocalSwiftPackageReference "../../../../../../CacheImages" */ = {
+		D3E000302C33FC5C00DF5403 /* XCLocalSwiftPackageReference "../../../../../../CacheImages" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../../../../../../CacheImages;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D353352F2C10BDA80097861E /* CacheImages */ = {
+		D3E000312C33FC5C00DF5403 /* CacheImages */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CacheImages;
 		};

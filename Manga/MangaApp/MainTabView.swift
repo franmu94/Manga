@@ -22,9 +22,9 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Top", systemImage: "square.and.pencil")
                 }
-            Text("Settings")
+            SettingView()
                 .tabItem {
-                    Label("Order", systemImage: "square.and.pencil")
+                    Label("Settings", systemImage: "gear")
                 }
         }
     }

@@ -16,8 +16,11 @@ final class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var showAlert = false
     @Published var registerOK = false
+    @Published var alertMessage = ""
+    
+    @Published var tupla: (activador: Bool, mensaje: String) = (false, "")
 
-    let keyChain = SecKeyStore.shared
+    let keyChain = KeychainManager.shared
 
     var passwordMatch: Bool {
         if password != "" {
@@ -36,9 +39,11 @@ final class LoginViewModel: ObservableObject {
     
     func registerUser() {
         guard allFieldsCheck() else {
-            showAlert.toggle()
+            showAlert = true
+            alertMessage = "Empty Fields"
             return
         }
+        print("eee")
         Task {
             do {
                 let user = UserModel(email: email, password: password)
@@ -47,7 +52,8 @@ final class LoginViewModel: ObservableObject {
 
                 try await interactor.registerUser(model: user)
                 await MainActor.run {
-                    registerOK.toggle()
+                    showAlert = true
+                    alertMessage = "Register Failed. Try again later"
                 }
                 
             } catch {
@@ -87,16 +93,6 @@ final class LoginViewModel: ObservableObject {
         }
     }
     
-    func recoverToken() -> String {
-        
-        guard let data = keyChain.readKey(label: "token") else {
-            return ""
-        }
-        if let token = String(data: data, encoding: .utf8)
-        {
-            return token
-        }
-        return ""
-    }
+   
 }
 

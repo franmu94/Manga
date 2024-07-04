@@ -13,7 +13,9 @@ enum NetworkError: LocalizedError {
     case json(Error)
     case dataNotValid
     case nonHTTP
-
+    case errorAddingManga
+    case errorRemovingManga
+    
     var errorDescription: String? {
         switch self {
         case .general(let error):
@@ -26,7 +28,10 @@ enum NetworkError: LocalizedError {
             "Error, dato no valido"
         case .nonHTTP:
             "No es una conexion HTTP"
-            
+        case .errorAddingManga:
+            "Can not add Manga."
+        case .errorRemovingManga:
+            "Error removing manga"
             
         }
     }

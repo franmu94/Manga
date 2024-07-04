@@ -23,17 +23,117 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EBA4CFF9-4245-4AFC-A131-180F6145CAF7"
+            uuid = "D0063EB9-1DAB-4209-B52B-40B63CA3CFD0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MangaApp/URLSession.swift"
+            filePath = "MangaApp/LoginViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "getData(url:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "registerUser()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D0063EB9-1DAB-4209-B52B-40B63CA3CFD0 - 58790821e659d9d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in MangaApp.LoginViewModel.registerUser() -&gt; ()"
+                  moduleName = "MangaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franmalo/Developer/Apple%20Coding%20Academy/Bootcamp-Apple-Coding-Academy-2024/99.Alter/04.%20SwiftUI/Manga/Manga/MangaApp/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48">
+               </Location>
+               <Location
+                  uuid = "D0063EB9-1DAB-4209-B52B-40B63CA3CFD0 - 202925b1004206ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in MangaApp.LoginViewModel.registerUser() -&gt; ()"
+                  moduleName = "MangaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franmalo/Developer/Apple%20Coding%20Academy/Bootcamp-Apple-Coding-Academy-2024/99.Alter/04.%20SwiftUI/Manga/Manga/MangaApp/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48">
+               </Location>
+               <Location
+                  uuid = "D0063EB9-1DAB-4209-B52B-40B63CA3CFD0 - 975fda2578301dd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in MangaApp.LoginViewModel.registerUser() -&gt; ()"
+                  moduleName = "MangaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franmalo/Developer/Apple%20Coding%20Academy/Bootcamp-Apple-Coding-Academy-2024/99.Alter/04.%20SwiftUI/Manga/Manga/MangaApp/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48">
+               </Location>
+               <Location
+                  uuid = "D0063EB9-1DAB-4209-B52B-40B63CA3CFD0 - b3b6855a59fa0028"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async -&gt; () in MangaApp.LoginViewModel.registerUser() -&gt; ()"
+                  moduleName = "MangaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franmalo/Developer/Apple%20Coding%20Academy/Bootcamp-Apple-Coding-Academy-2024/99.Alter/04.%20SwiftUI/Manga/Manga/MangaApp/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48">
+               </Location>
+               <Location
+                  uuid = "D0063EB9-1DAB-4209-B52B-40B63CA3CFD0 - f7cb208a1bc3486d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MangaApp.LoginViewModel.registerUser() -&gt; ()"
+                  moduleName = "MangaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franmalo/Developer/Apple%20Coding%20Academy/Bootcamp-Apple-Coding-Academy-2024/99.Alter/04.%20SwiftUI/Manga/Manga/MangaApp/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47">
+               </Location>
+               <Location
+                  uuid = "D0063EB9-1DAB-4209-B52B-40B63CA3CFD0 - c3ed47cd8df0b435"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () async -&gt; () in MangaApp.LoginViewModel.registerUser() -&gt; ()"
+                  moduleName = "MangaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franmalo/Developer/Apple%20Coding%20Academy/Bootcamp-Apple-Coding-Academy-2024/99.Alter/04.%20SwiftUI/Manga/Manga/MangaApp/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47">
+               </Location>
+               <Location
+                  uuid = "D0063EB9-1DAB-4209-B52B-40B63CA3CFD0 - 58790821e659d9f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in MangaApp.LoginViewModel.registerUser() -&gt; ()"
+                  moduleName = "MangaApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franmalo/Developer/Apple%20Coding%20Academy/Bootcamp-Apple-Coding-Academy-2024/99.Alter/04.%20SwiftUI/Manga/Manga/MangaApp/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

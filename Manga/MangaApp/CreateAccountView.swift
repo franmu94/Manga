@@ -32,7 +32,7 @@ struct CreateAccountView: View {
                 
                 Button(action: {
                     vm.registerUser()
-                    
+                    print("www")
                 }, label: {
                     Text("Create account")
                 })
@@ -44,11 +44,7 @@ struct CreateAccountView: View {
             dismiss()
         }
         .safeAreaPadding()
-        .alert("Empty fields", isPresented: $vm.showAlert) {
-            
-        } message: {
-            Text("No empty fields allowed")
-        }
+        .alert(vm.alertMessage, isPresented: $vm.showAlert) {}
 
     }
 }

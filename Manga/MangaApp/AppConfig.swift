@@ -24,6 +24,15 @@ final class AppConfig {
         APIKey = plist["Api_Key"]
         
     }
+    
+    func recoverToken() -> String {
+        
+        guard let data = KeychainManager.shared.readKey(label: "token"),
+              let token = String(data:data, encoding: .utf8)
+        else { return "" }
+        
+        return token
+    }
 }
 
 

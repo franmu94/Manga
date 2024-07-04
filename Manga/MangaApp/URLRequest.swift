@@ -22,6 +22,10 @@ extension URLRequest {
         return request
     }
     
+    static func getUserColection() {
+        
+    }
+    
     static func post(model: UserModel, apiPassword: String?, url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         
