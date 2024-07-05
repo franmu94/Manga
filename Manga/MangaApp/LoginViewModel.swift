@@ -18,7 +18,6 @@ final class LoginViewModel: ObservableObject {
     @Published var registerOK = false
     @Published var alertMessage = ""
     
-    @Published var tupla: (activador: Bool, mensaje: String) = (false, "")
 
     let keyChain = KeychainManager.shared
 
@@ -43,7 +42,7 @@ final class LoginViewModel: ObservableObject {
             alertMessage = "Empty Fields"
             return
         }
-        print("eee")
+
         Task {
             do {
                 let user = UserModel(email: email, password: password)
@@ -52,12 +51,15 @@ final class LoginViewModel: ObservableObject {
 
                 try await interactor.registerUser(model: user)
                 await MainActor.run {
-                    showAlert = true
-                    alertMessage = "Register Failed. Try again later"
+                    registerOK.toggle()
                 }
                 
             } catch {
-                print(error)
+                print(error.localizedDescription)
+                await MainActor.run {
+                    showAlert = true
+                    alertMessage = "Register Failed. Try again later"
+                }
             }
         }
     }

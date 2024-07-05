@@ -32,7 +32,6 @@ struct CreateAccountView: View {
                 
                 Button(action: {
                     vm.registerUser()
-                    print("www")
                 }, label: {
                     Text("Create account")
                 })
