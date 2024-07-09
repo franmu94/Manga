@@ -18,7 +18,7 @@ struct MangaAppApp: App {
         WindowGroup {
             if userLogged {
                 MainTabView()
-                    .environmentO(listVM)
+                    .environmentObject(listVM)
             } else {
                 LoginView()
             }

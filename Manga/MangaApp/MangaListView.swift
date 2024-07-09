@@ -32,7 +32,7 @@ struct MangaListView: View {
                 Menu {
                     ForEach(FilterType.allCases) { filter in
                         Button {
-                            vm.filterOption = filter
+                            vm.filterType = filter
                             if filter != .All {
                                 showFilterView.toggle()
                             }

@@ -6,14 +6,13 @@
 //
 
 import Foundation
-//import Combine
 
 enum FilterType: String, CaseIterable, Identifiable {
     var id: Self { self }
     case All
     case Themes
     case Genre
-    case Demography
+    case Demographic
 }
 
 final class MangaListViewModel: ObservableObject {
@@ -25,48 +24,70 @@ final class MangaListViewModel: ObservableObject {
     }
     
     var getFilteredOptions: [String] {
-        switch filterOption {
+        switch filterType {
         case .All:
             []
         case .Themes:
             Theme.allCases.map { $0.rawValue }
         case .Genre:
             Genre.allCases.map { $0.rawValue }
-        case .Demography:
+        case .Demographic:
             Demography.allCases.map { $0.rawValue }
         }
     }
     
-    //private var disposeBag = Set<AnyCancellable>()
-    private var searchWork: DispatchWorkItem?
-
     let mangaListInteractor: MangaListInteractorProtocol
-    var mangaGetType: MangasGetType = .general 
+
+    var searchTask: Task<Void,Never>?
+    var mangaGetType: MangasGetType = .general
     var errorMessage = ""
+    var page = 1
+    var per = 20
     
+    @Published var isLoading: Bool = true
     @Published var showerror = false
-    @Published var mangaList: [MangaDTO] = []
+    @Published var mangaList: [MangaDTO] = [] {
+        didSet {
+            isLoading = false
+        }
+    }
     @Published var searchText: String = "" {
         didSet {
+            if oldValue != searchText {
+                page = 1
+                if !searchText.isEmpty {
+                    mangaGetType = .search
+                    searchWithDelayAsync()
+
+                } else {
+                    mangaGetType = .general
+                    getMangas()
+
+                }
+            }
+        }
+    }
+    @Published var filterType: FilterType = .All
+  
+    
+    
+
+    @Published var selectedFilteredOption: String = "" {
+        didSet {
+            if selectedFilteredOption == "" {
+                mangaGetType = .general
+            } else {
+                mangaGetType = .filter
+            }
             page = 1
-            searchWithDelay()
+            getMangas()
         }
     }
     
-    @Published var filterOption: FilterType = .All
-    @Published var selectedTheme: Theme = .gore
-    @Published var selectedGenre: Genre = .action
-    @Published var selectedDemography: Demography = .Josei
-
-    @Published var selectedFilteredOption: String = ""
-    var page = 1
-    var per = 20
     
     
     init(mangaListInteractor: MangaListInteractorProtocol = MangaListInteractor.shared ) {
         self.mangaListInteractor = mangaListInteractor
-        //getMangaList()
-        //debounceSearchText()
         getMangas()
     }
     
@@ -89,7 +110,7 @@ final class MangaListViewModel: ObservableObject {
     
     func getFilteredMangas() {
         Task {
-            switch filterOption {
+            switch filterType {
             case .All:
                 getMangaList()
             case .Themes:
@@ -100,18 +121,14 @@ final class MangaListViewModel: ObservableObject {
                 await MainActor.run {
                                     self.mangaList = filterResult
                                 }
-            case .Demography:
+            case .Demographic:
                 break
             }
         }
     }
     
     func setMangaType() {
-       mangaGetType =  if searchText.isEmpty {
-            .general
-        } else {
-            .search
-        }
+        mangaGetType = searchText.isEmpty ? .general : .search
     }
     
     func getMangaList() {
@@ -161,32 +178,15 @@ final class MangaListViewModel: ObservableObject {
         showerror = true
     }
    
-    /*private func debounceSearchText() {
-        $searchText
-            .debounce(for: 1, scheduler: RunLoop.main)
-            .sink { value in
-                self.getMangas()
+    func searchWithDelayAsync() {
+        searchTask?.cancel()
+        searchTask = nil
+        searchTask = Task { @MainActor in //hace que el getMangas se haga cada cosa en su hilo. como lo del @MainActor arriba encima de la funcion.
+            try? await Task.sleep(nanoseconds: 300_000_000) //0.3 segundos
+            if Task.isCancelled {
+                return
             }
-            .store(in: &disposeBag)
-    }*/
-    
-    private func searchWithDelay() {
-        searchWork?.cancel()
-        let newSearchWork = DispatchWorkItem {
-            self.getMangas()
+            getMangas()
         }
-        searchWork = newSearchWork
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: newSearchWork)
     }
-  
-    
-    /* @MainActor
-    func getMangaList2() async {
-        do {
-            let result = try await mangaListInteractor.fetchMangasList(page: page, per: per).items
-            mangaList += result
-        } catch {
-            print(error)
-        }
-    } */
 }
