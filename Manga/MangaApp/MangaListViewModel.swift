@@ -70,11 +70,11 @@ final class MangaListViewModel: ObservableObject {
     @Published var filterType: FilterType = .All
   
     
-    
-
-    @Published var selectedFilteredOption: String = "" {
+                   
+                
+    @Published var selectedFilterOptions: String = "" {
         didSet {
-            if selectedFilteredOption == "" {
+            if selectedFilterOptions == "" {
                 mangaGetType = .general
             } else {
                 mangaGetType = .filter
@@ -95,40 +95,31 @@ final class MangaListViewModel: ObservableObject {
         if page == 1 {
             mangaList.removeAll()
         }
-        setMangaType()
+        isLoading = true
         switch mangaGetType {
         case .search:
+            print("serch")
             getMangaSearch()
             
         case .general:
+            print("general")
             getMangaList()
             
         case .filter:
+            print("filter")
             getFilteredMangas()
         }
+
     }
     
     func getFilteredMangas() {
         Task {
-            switch filterType {
-            case .All:
-                getMangaList()
-            case .Themes:
-                break
-            case .Genre:
-                page = 1
-                let filterResult = try await mangaListInteractor.fetchMangasByGenre(genre: selectedGenre.rawValue, page: page).items
-                await MainActor.run {
-                                    self.mangaList = filterResult
-                                }
-            case .Demographic:
-                break
+            let filterResult = try await mangaListInteractor.fetchMangasByFilter(filterType: filterType.rawValue, filterOption: selectedFilterOptions, page: page).items
+            await MainActor.run {
+                self.mangaList += filterResult
             }
         }
-    }
-    
-    func setMangaType() {
-        mangaGetType = searchText.isEmpty ? .general : .search
+        
     }
     
     func getMangaList() {
@@ -162,8 +153,7 @@ final class MangaListViewModel: ObservableObject {
             } catch let error as NetworkError {
                 //print(error.errorDescription)
                 await MainActor.run {
-                    setAlert()
-                }
+                    setAlert(message: error.errorDescription)                }
             } catch {
                 //print(error)
                 await MainActor.run {

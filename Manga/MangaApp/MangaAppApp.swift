@@ -12,13 +12,13 @@ struct MangaAppApp: App {
     
     @AppStorage("userLogged") var userLogged = false // no lo sobreescribe
 
-    @StateObject var listVM = MangaListViewModel()
+    @StateObject var vm = MangaListViewModel()
     
     var body: some Scene {
         WindowGroup {
             if userLogged {
                 MainTabView()
-                    .environmentObject(listVM)
+                    .environmentObject(vm)
             } else {
                 LoginView()
             }

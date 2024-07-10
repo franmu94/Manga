@@ -41,6 +41,7 @@
 		D3E000322C33FC5C00DF5403 /* CacheImages in Frameworks */ = {isa = PBXBuildFile; productRef = D3E000312C33FC5C00DF5403 /* CacheImages */; };
 		D3E000342C3417DC00DF5403 /* MangaUserCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E000332C3417DC00DF5403 /* MangaUserCollectionInteractor.swift */; };
 		D3E000382C36B76F00DF5403 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E000372C36B76F00DF5403 /* SettingsView.swift */; };
+		D3E0003A2C3F017F00DF5403 /* MangaListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E000392C3F017F00DF5403 /* MangaListDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		D3E000332C3417DC00DF5403 /* MangaUserCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaUserCollectionInteractor.swift; sourceTree = "<group>"; };
 		D3E000352C3535AA00DF5403 /* PreviewCollectionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PreviewCollectionData.json; sourceTree = "<group>"; };
 		D3E000372C36B76F00DF5403 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D3E000392C3F017F00DF5403 /* MangaListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaListDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				D3AF48792C08CD8900AA191F /* MangaListView.swift */,
+				D3E000392C3F017F00DF5403 /* MangaListDetailView.swift */,
 				D35335272C10B9EE0097861E /* MAngaListCell.swift */,
 				D353353D2C17175A0097861E /* FilterListView.swift */,
 				D353353F2C174EDF0097861E /* FilterListViewArray.swift */,
@@ -422,6 +425,7 @@
 				D3D823462BFBA00600BFF546 /* MangaAppApp.swift in Sources */,
 				D3D823862BFE513E00BFF546 /* NetworkError.swift in Sources */,
 				D3D8236E2BFD05F000BFF546 /* URL.swift in Sources */,
+				D3E0003A2C3F017F00DF5403 /* MangaListDetailView.swift in Sources */,
 				D3AF48742C08949C00AA191F /* Enums.swift in Sources */,
 				D3E000342C3417DC00DF5403 /* MangaUserCollectionInteractor.swift in Sources */,
 				D3D823802BFE464400BFF546 /* URLRequest.swift in Sources */,
