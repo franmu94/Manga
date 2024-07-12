@@ -10,7 +10,13 @@ import Foundation
 final class AppConfig {
     static let shared = AppConfig()
     
+    let keychainManager = KeychainManager.shared
+    
     var APIKey: String?
+    
+    var userToken: String {
+        recoverToken()
+    }
     
     init() {
         try? getApiKey()
@@ -27,11 +33,14 @@ final class AppConfig {
     
     func recoverToken() -> String {
         
-        guard let data = KeychainManager.shared.readKey(label: "token"),
-              let token = String(data:data, encoding: .utf8)
-        else { return "" }
+        guard let data = KeychainManager.shared.readKey(label: "token"), let token = String(data:data, encoding: .utf8) else { return "" }
         
         return token
+    }
+    
+    func refreshToken() async throws {
+        let (data, _) = try await URLSession.shared.data(for: .refreshToken(url: .userRenewURL, userToken: userToken, apiPassword: APIKey))
+        keychainManager.storeKey(key: data, label: "token")
     }
 }
 

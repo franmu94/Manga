@@ -20,7 +20,10 @@ extension URL {
     
     static let userCollectionURL = mainURL.appending(path: "collection/manga")
 
-
+    static func deleteMangaFromCollection(id: Int) -> URL {
+        userCollectionURL.appending(path: "\(id)")
+    }
+    
     static func allMagasList(page: Int, per: Int) -> URL {
         listMangasURL.appending(path: "mangas").appending(queryItems: [.page(page: page), .per(per: per)])
     }

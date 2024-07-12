@@ -13,6 +13,7 @@ struct MangaAppApp: App {
     @AppStorage("userLogged") var userLogged = false // no lo sobreescribe
 
     @StateObject var vm = MangaListViewModel()
+    @StateObject var collectionVM = UserCollectionVM()
     
     var body: some Scene {
         WindowGroup {
