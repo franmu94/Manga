@@ -9,7 +9,7 @@ import SwiftUI
 final class LoginViewModel: ObservableObject {
     
     @AppStorage("userLogged") var userLogged = false
-    
+    @AppStorage("usernameLoged") private var usernameLoged: String = ""
     @Published var username = ""
     @Published var password = ""
     @Published var passwordConfirm = ""
@@ -79,6 +79,7 @@ final class LoginViewModel: ObservableObject {
 
     
     func logIn() {
+        usernameLoged = email
         Task {
             do {
                 let user = UserModel(email: email, password: password)
@@ -87,7 +88,8 @@ final class LoginViewModel: ObservableObject {
                     userLogged = true
                 }
             } catch {
-                print(error.localizedDescription)
+                print("eerror")
+                print(error.localizedDescription + "login")
                 await MainActor.run {
                     userLogged = false
                 }

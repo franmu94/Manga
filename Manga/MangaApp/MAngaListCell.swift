@@ -13,7 +13,7 @@ struct MangaListCell: View {
     @ObservedObject var vm = AvatarVM()
 
     var body: some View {
-        HStack {
+        HStack (alignment: .top) {
             if let image = vm.image {
                 Image(uiImage: image)
                     .resizable()
@@ -30,7 +30,6 @@ struct MangaListCell: View {
                 Text(String(manga.score))
             }
             .padding()
-            
         }
         .onAppear{
             if let imageURL = manga.mainPictureURL {

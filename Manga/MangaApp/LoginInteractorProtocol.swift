@@ -42,12 +42,7 @@ struct LoginInteractor: LoginInteractorProtocol {
         
         
         
-        switch responseHTTP {
-        case 200:
-            throw NetworkError.status(responseHTTP.statusCode)
-        default:
-            print("error")
-        }
+        
         
         
         guard responseHTTP.statusCode == 200 else {

@@ -10,12 +10,18 @@ import SwiftUI
 struct SettingView: View {
     
     @AppStorage("userLogged") var userLogged = true
+    @AppStorage("usernameLoged")  var username: String = ""
+
     
     var body: some View {
-        Button {
-            userLogged = false
-        } label: {
-            Text("Log Out")
+        
+        VStack {
+            Text("Welcome, \(username)")
+            Button {
+                userLogged = false
+            } label: {
+                Text("Logout")
+            }
         }
 
     }

@@ -9,17 +9,23 @@ import SwiftUI
 
 struct FilterListViewArray: View {
     
-    //@Binding var selectedFilter: T
+    @Binding var selectedOption: String
     let filterOptions: [String]
     @Binding var showFilter: Bool
-    @Binding var selectedOption: String
-    
+
     var body: some View {
         VStack (alignment:.leading) {
+            Button {
+                showFilter.toggle()
+            } label: {
+                Text("< Back")
+                    .padding()
+            }
+            
             List {
                 ForEach(filterOptions, id: \.self) { filter in
                     Text("\(filter)".capitalized)
-                        .font(.title2)
+                        .font(.title)
                         .foregroundStyle(.secondary)
                         .onTapGesture {
                             selectedOption = filter
@@ -31,23 +37,28 @@ struct FilterListViewArray: View {
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            Button {
-                showFilter.toggle()
-            } label: {
-                Image(systemName: "xmark.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 30)
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.white.opacity(0.8))
+            .overlay {
+                VStack(){
+                    Spacer()
+                    Button {
+                        showFilter.toggle()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 30)
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.gray.opacity(0.9))
+                        
+                    }
+                }
             }
         }
         .padding(.top, 30)
         .background(.thinMaterial)
-        
     }
 }
 
 #Preview {
-    FilterListViewArray(filterOptions: Theme.allCases.map { $0.rawValue }, showFilter: .constant(true), selectedOption: .constant(""))
+    FilterListViewArray(selectedOption: .constant(""), filterOptions: Theme.allCases.map { $0.rawValue }, showFilter: .constant(true))
 }
