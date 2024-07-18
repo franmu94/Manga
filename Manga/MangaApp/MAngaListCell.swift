@@ -10,7 +10,7 @@ import CacheImages
 
 struct MangaListCell: View {
     let manga: MangaDTO
-    @ObservedObject var vm = AvatarViewModel()
+    @ObservedObject var vm = AvatarVM()
 
     var body: some View {
         HStack {

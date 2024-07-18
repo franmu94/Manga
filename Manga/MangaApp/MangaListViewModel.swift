@@ -45,7 +45,7 @@ final class MangaListViewModel: ObservableObject {
     var per = 20
     
     @Published var isLoading: Bool = true
-    @Published var showerror = false
+    @Published var showError = false
     @Published var mangaList: [MangaDTO] = [] {
         didSet {
             isLoading = false
@@ -165,7 +165,7 @@ final class MangaListViewModel: ObservableObject {
     
     private func setAlert(message: String? = nil) {
         errorMessage = message ?? "Can not change the view"
-        showerror = true
+        showError = true
     }
    
     func searchWithDelayAsync() {
