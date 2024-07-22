@@ -16,7 +16,7 @@ enum NetworkError: LocalizedError {
     case errorAddingManga
     case errorRemovingManga
     
-    var errorDescription: String? {
+    var errorDescription: String {
         switch self {
         case .general(let error):
             "Error general: \(error.localizedDescription)"
