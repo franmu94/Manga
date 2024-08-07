@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class UserCollectionVM {
+final class UserCollectionVM: ObservableObject {
     var showAlert = false
     var userCollection : [UserCollectionManga] = []
     let interactor: MangaUserCollectionInteractorProtocol

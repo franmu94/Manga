@@ -15,6 +15,7 @@
 		D353352A2C10BAE20097861E /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35335292C10BAE20097861E /* PreviewData.swift */; };
 		D35335402C174EDF0097861E /* FilterListViewArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D353353F2C174EDF0097861E /* FilterListViewArray.swift */; };
 		D3745BD72C04DC78000F62AF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3745BD62C04DC78000F62AF /* KeychainManager.swift */; };
+		D399FD8D2C63735B003A7770 /* UserCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D399FD8C2C63735B003A7770 /* UserCollectionView.swift */; };
 		D3AF48702C08944700AA191F /* MangaListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF486F2C08944700AA191F /* MangaListInteractor.swift */; };
 		D3AF48742C08949C00AA191F /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF48732C08949C00AA191F /* Enums.swift */; };
 		D3AF48762C0897ED00AA191F /* MangaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF48752C0897ED00AA191F /* MangaModel.swift */; };
@@ -52,6 +53,7 @@
 		D35335292C10BAE20097861E /* PreviewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewData.swift; path = ../../../../../../../../../Downloads/PreviewData.swift; sourceTree = "<group>"; };
 		D353353F2C174EDF0097861E /* FilterListViewArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterListViewArray.swift; sourceTree = "<group>"; };
 		D3745BD62C04DC78000F62AF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeychainManager.swift; path = "../../../../../../../../Library/Mobile Documents/com~apple~CloudDocs/KeychainManager.swift"; sourceTree = "<group>"; };
+		D399FD8C2C63735B003A7770 /* UserCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionView.swift; sourceTree = "<group>"; };
 		D3AF486F2C08944700AA191F /* MangaListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaListInteractor.swift; sourceTree = "<group>"; };
 		D3AF48732C08949C00AA191F /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		D3AF48752C0897ED00AA191F /* MangaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangaModel.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				D31C29322C3FF286005C14B2 /* UserCollecionVM.swift */,
+				D399FD8C2C63735B003A7770 /* UserCollectionView.swift */,
 			);
 			name = UserCollection;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				D35335242C0F64F30097861E /* URLSession.swift in Sources */,
 				D3D8237E2BFE43C400BFF546 /* LoginInteractorProtocol.swift in Sources */,
 				D353352A2C10BAE20097861E /* PreviewData.swift in Sources */,
+				D399FD8D2C63735B003A7770 /* UserCollectionView.swift in Sources */,
 				D3AF487E2C08DCAA00AA191F /* DateFormatter.swift in Sources */,
 				D3E0002F2C33356400DF5403 /* MangaCollectionModel.swift in Sources */,
 				D3D823842BFE4A4C00BFF546 /* AppConfig.swift in Sources */,

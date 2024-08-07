@@ -10,7 +10,7 @@ import Foundation
 enum FilterType: String, CaseIterable, Identifiable {
     var id: Self { self }
     case All
-    case Themes
+    case Theme
     case Genre
     case Demographic
 }
@@ -22,12 +22,13 @@ final class MangaListViewModel: ObservableObject {
         case general
         case filter
     }
-    
+    @Published var isLoading: Bool = true
+
     var getFilteredOptions: [String] {
         switch filterType {
         case .All:
             []
-        case .Themes:
+        case .Theme:
             Theme.allCases.map { $0.rawValue }
         case .Genre:
             Genre.allCases.map { $0.rawValue }
@@ -44,7 +45,6 @@ final class MangaListViewModel: ObservableObject {
     var page = 1
     var per = 20
     
-    @Published var isLoading: Bool = true
     @Published var showError = false
     @Published var mangaList: [MangaDTO] = [] {
         didSet {

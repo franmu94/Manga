@@ -14,12 +14,13 @@ struct MangaAppApp: App {
 
     @StateObject var vm = MangaListViewModel()
     //@StateObject var collectionVM = UserCollectionVM()
-    
+    @StateObject var collectionVM = UserCollectionVM()
     var body: some Scene {
         WindowGroup {
             if userLogged {
                 MainTabView()
                     .environmentObject(vm)
+                    .environmentObject(collectionVM)
             } else {
                 LoginView()
             }
